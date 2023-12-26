@@ -14,7 +14,9 @@ app.config["MYSQL_DB"] = "vueltaf"
 
 mysql = MySQL(app)
 
-
+@app.route('/')
+def index():
+    return 'hola mundo'
 
 
 @app.route('/crearusuario', methods =['GET','POST'])
