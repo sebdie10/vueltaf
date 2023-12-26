@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-dark text-white">
+        <a class="navbar-brand text-white" href="/">Vuelta F1</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Juego</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Configuración</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://e00-marca.uecdn.es/multimedia/graficos/motor/2023/presentacion-ferrari/trescuartos2023.jpg" class="img-fluid" alt="Imagen de registro">
+            </div>
+            <div class="col-md-6">
+                <h2>Registro de Usuario</h2>
+                <form action="/crearusuario" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" required name="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" required name="apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Usuario</label>
+                        <input type="text" class="form-control" id="correo" required name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correo" required name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="fechaNacimiento" required name="cumpleaños">
+                    </div>
+                    <div class="form-group">
+                        <label for="pais">País</label>
+                        <select class="form-control" id="pais" required name="pais">
+                            <option value="pais1">País 1</option>
+                            <option value="pais2">País 2</option>
+                            <!-- Agrega más opciones de países aquí -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" class="form-control" id="contrasena" required name="Contraseña">
+                    </div>
+                    <div class="form-group">
+                        <label for="repetirContrasena">Repetir Contraseña</label>
+                        <input type="password" class="form-control" id="repetirContrasena" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae lorem eu nunc condimentum mattis. Curabitur euismod elit sit amet augue interdum bibendum. Integer scelerisque nunc at libero scelerisque, ac venenatis metus varius.</p>
+        <img src="codigo_qr.png" alt="Código QR" class="img-fluid" width="100">
+    </footer>
+</body>
+</html>

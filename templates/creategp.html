@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Página</title>
+    <!-- Agrega los enlaces a los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">VueltaF1</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Juego</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Configuración</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Crear Nuevo GP</h2>
+        <form action="/creategp">
+            <div class="form-group">
+                <label for="nombreGP">Nombre del GP:</label>
+                <input name="nombre" type="text" class="form-control" id="nombreGP" placeholder="Ingrese el nombre del GP">
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input name="fecha" type="date" class="form-control" id="fecha">
+            </div>
+            <div class="form-group">
+                <label for="hora">Hora:</label>
+                <input type="time" class="form-control" id="hora" name="hora">
+            </div>
+            <div class="form-group" >
+                <label for="estado">Estado:</label>
+                <select class="form-control" id="estado" name="estado">
+                    <option value="en_curso">En Curso</option>
+                    <option value="finalizado">Finalizado</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Cargar GP</button>
+        </form>
+    </div>
+
+    <!-- Pie de página con código QR -->
+    <footer class="bg-dark text-white text-center py-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <br>
+        <img src="ruta-a-tu-codigo-qr.png" alt="Código QR" width="100">
+    </footer>
+
+    <!-- Agrega el enlace al archivo JavaScript de Bootstrap y cualquier otro script que necesites -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

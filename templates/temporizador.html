@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador Regresivo</title>
+    
+    <!-- Agregar los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #countdown-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mt-4">Proxima carrera</h1>
+        
+        <!-- Agregar un contenedor con estilos de Bootstrap -->
+        <div id="countdown-container" class="mt-4">
+            <h2>GP {{nombre}}</h2>
+            <p id="timer" class="lead"></p>
+            <p>Fecha: {{fecha}}</p>
+        </div>
+    </div>
+    <script>
+        // Define la fecha y hora objetivo (formato: "YYYY-MM-DD HH:mm:ss")
+        var fecha = "{{ fecha | safe }}"//"2024-02-29";
+        var hora = "{{ hora | safe }}"//"00:00:00";
+
+        // Calcula la diferencia de tiempo en segundos
+        var targetTime = new Date(fecha + "T" + hora + "Z").getTime();
+        var currentTime = new Date().getTime();
+        var timeDifferenceSeconds = Math.max(Math.floor((targetTime - currentTime) / 1000), 0);
+
+        // Función para actualizar el temporizador
+        function updateTimer() {
+            var days = Math.floor(timeDifferenceSeconds / (3600 * 24));
+            var hours = Math.floor((timeDifferenceSeconds % (3600 * 24)) / 3600);
+            var minutes = Math.floor((timeDifferenceSeconds % 3600) / 60);
+            var seconds = Math.floor(timeDifferenceSeconds % 60);
+
+            document.getElementById('timer').innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+
+            if (timeDifferenceSeconds > 0) {
+                setTimeout(function() {
+                    timeDifferenceSeconds--;
+                    updateTimer();
+                }, 1000);
+            }
+        }
+
+        // Inicia el temporizador al cargar la página
+        window.onload = updateTimer;
+    </script>
+
+    <!-- Agregar los scripts de Bootstrap al final del cuerpo del documento -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
