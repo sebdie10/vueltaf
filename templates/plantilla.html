@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueltaF1</title>
+
+    <!-- Agregar los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body class="bg-dark text-white">
+
+    <header class="bg-danger py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="text-white">VueltaF1</h1>
+                </div>
+                <div class="col-md-6 text-right">
+                    <nav>
+                        <a href="#" class="text-white">Inicio</a>
+                        <a href="#" class="text-white">Login</a>
+                        <a href="#" class="text-white">Iniciar Sesión</a>
+                        <a href="#" class="text-white">Cerrar Sesión</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-4">
+        {% block contenido% }
+        
+        {% endblock %}
+    </div>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container">
+            <p class="m-0">&copy; 2023 VueltaF1 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Agregar los scripts de Bootstrap al final del cuerpo del documento -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
