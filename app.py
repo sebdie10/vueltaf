@@ -19,6 +19,11 @@ def index():
     return redirect('/time')
 
 
+@app.route('/plantilla')
+def plantilla_():
+    return flask.render_template('plantilla.html')
+
+
 @app.route('/crearusuario', methods =['GET','POST'])
 def crear_usuario():
     if request.method == 'POST':
@@ -63,7 +68,16 @@ def tiempo():
     #nombre = data[0][1]#'GP Bahrein'
     #fecha = '2024-02-29'
     hora = fecha_objeto.time()#'00:00:00'
-    return flask.render_template('temporizador.html', nombre=nombre, fecha=fecha_f, hora=hora)
+    if len(str(fecha_f.month))== 1:
+        meses = '0' + str(fecha_f.month)
+        meses = int(meses)
+    else:
+        meses = fecha_f.month
+    timer = [fecha_f.year,meses,fecha_f.day,hora.hour,hora.minute,hora.second]
+    print("\naño \n")
+    print(timer)
+    
+    return flask.render_template('timer2.html', nombre=nombre, fecha=fecha_f, hora=hora, timer=timer)
 
 '''
 @app.route('/prode')

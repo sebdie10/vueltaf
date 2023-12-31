@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <!-- Agregar los estilos de Bootstrap y la tipografía Roboto y Open Sans -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timer.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600,700,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+
+
+<span id="timer" style="display: none;">{{timer}}</span>
+<div class="portada">
+<div class="container">
+    <h1 class="mt-4">Proxima carrera</h1>
+    
+    <!-- Agregar un contenedor con estilos de Bootstrap -->
+    <div id="countdown-container" class="mt-4">
+        <h2>GP {{nombre}}</h2>
+        <span>{{timer.0}} - {{timer.1}} - {{timer.2}}</span>
+        <p id="timer" class="lead"></p>
+        <div id="cuenta"></div>
+    </div>
+    <button type="button" class="btn btn-light">Play</button>
+    <button type="button" class="btn btn-dark">More information</button>
+</div>
+</div>
+
+
+<!-- Vincula el archivo JavaScript -->
+<script src="{{ url_for('static', filename='js/simplyCountdown.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+
+
+<!-- Vincula el archivo JavaScript de boostrap-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
