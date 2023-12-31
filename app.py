@@ -15,7 +15,7 @@ db = sqlite3.connect('db/vueltaf.db', check_same_thread=False)
 
 @app.route('/')
 def index():
-    return 'hola mundo'
+    return redirect('/time')
 
 
 @app.route('/crearusuario', methods =['GET','POST'])
