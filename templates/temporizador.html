@@ -5,26 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temporizador Regresivo</title>
     
-    <!-- Agregar los estilos de Bootstrap -->
+    <!-- Agregar los estilos de Bootstrap y la tipografía Roboto y Open Sans -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             text-align: center;
             margin: 50px;
+            background-color: #e5e5e5;
         }
 
         #countdown-container {
-            border: 1px solid #ccc;
             padding: 20px;
             border-radius: 10px;
             max-width: 400px;
             margin: 0 auto;
         }
+
+        #countdown-container h2,
+        #countdown-container p {
+            color: #343a40; /* Color de texto oscuro */
+        }
+
+        .contenedor{
+            text-align: center;
+        }
+        .tiempo{
+            display: inline-flex;
+        }
+        .tiempo span{
+            padding: 10px;
+            font-family: 'Open Sans',sans-serif;
+            font-size: 52px;
+        }
+
+        .titulos{
+            display: inline-flex;
+        }
+
+        .titulos span{
+            padding: 15px;
+            font-family: 'Open Sans',sans-serif;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
+
 
     <div class="container">
         <h1 class="mt-4">Proxima carrera</h1>
@@ -53,7 +82,20 @@
             var minutes = Math.floor((timeDifferenceSeconds % 3600) / 60);
             var seconds = Math.floor(timeDifferenceSeconds % 60);
 
-            document.getElementById('timer').innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+            document.getElementById('timer').innerHTML = `<div id="contenedor">
+                <div class="tiempo">
+                    <span>${days}</span>
+                    <span>${hours}</span>
+                    <span>${minutes}</span>
+                    <span>${seconds}</span>
+                    </div>
+                    <div class="titulos"
+                    ><span>Dias</span>
+                    <span>horas</span>
+                    <span>minutos</span>
+                    <span>segundos</span>
+                    </div>
+                    </div>`;
 
             if (timeDifferenceSeconds > 0) {
                 setTimeout(function() {
